@@ -1,0 +1,38 @@
+.weather-stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.7s forwards;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  opacity: 0.8;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.stat-icon {
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+}
+
+.stat span {
+  transition: all 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

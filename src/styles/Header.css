@@ -1,0 +1,42 @@
+
+.weather-header {
+  margin-bottom: 20px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.3s forwards;
+}
+
+.location-icon {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+  opacity: 0.8;
+}
+
+.location-text {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.9;
+  color: #ffffff;
+}
+
+.location-subtext {
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

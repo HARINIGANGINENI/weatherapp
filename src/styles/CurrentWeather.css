@@ -1,0 +1,143 @@
+.current-weather {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.5s forwards;
+}
+
+.weather-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-icon {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  animation: bounce 2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.sun {
+  width: 40px;
+  height: 40px;
+  background: #ffd700;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  animation: rotate 8s linear infinite;
+}
+
+.sun::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 17px;
+  width: 6px;
+  height: 15px;
+  background: #ffd700;
+  border-radius: 3px;
+  box-shadow: 
+    0 45px 0 #ffd700,
+    32px 15px 0 #ffd700,
+    32px 30px 0 #ffd700,
+    -32px 15px 0 #ffd700,
+    -32px 30px 0 #ffd700,
+    22px -12px 0 #ffd700,
+    22px 57px 0 #ffd700,
+    -22px -12px 0 #ffd700,
+    -22px 57px 0 #ffd700;
+}
+
+.cloud {
+  width: 60px;
+  height: 30px;
+  background: #ffffff;
+  border-radius: 30px;
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  opacity: 0.9;
+  animation: float 3s ease-in-out infinite;
+}
+
+.cloud::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.cloud::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  width: 25px;
+  height: 25px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.weather-description {
+  font-size: 14px;
+  opacity: 0.8;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.temperature {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .current-weather {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .temperature {
+    font-size: 36px;
+  }
+}
